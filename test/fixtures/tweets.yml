@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  annotation: MyString
+  annotator: MyString
+  dateTime: 2013-06-13 18:48:11
+
+two:
+  annotation: MyString
+  annotator: MyString
+  dateTime: 2013-06-13 18:48:11
