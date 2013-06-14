@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130613221412) do
+ActiveRecord::Schema.define(:version => 20130614142703) do
 
   create_table "annotations", :force => true do |t|
     t.string   "browserUAString"
@@ -31,5 +31,15 @@ ActiveRecord::Schema.define(:version => 20130613221412) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.integer  "number_of_annotations"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "password_digest"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end
