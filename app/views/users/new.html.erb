@@ -8,9 +8,14 @@
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
 
       <%= f.label :email %>
       <%= f.text_field :email %>
+
+      <%= f.label :english_language_level_______where_5_represents_a_native_speaker %>
+      <%= f.select :language_level, [['1', 1], ['2',2], ['3',3], ['4',4], ['5',5]] %>
 
       <%= f.label :password %>
       <%= f.password_field :password %>
