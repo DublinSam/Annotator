@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @annotations = @user.annotations.paginate(page: params[:page])
+    #@tweets = @user.tweets.paginate(page: params[:page])
   end
 
   def new
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user 
-      flash[:success] = "Welcome to the Annotator!"
+      flash[:success] = "Welcome to the Annotator"
       redirect_to @user
     else
       render 'new'

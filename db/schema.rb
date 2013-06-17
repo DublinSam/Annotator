@@ -11,22 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130617095027) do
-
-  create_table "annotations", :force => true do |t|
-    t.integer  "user_id"
-    t.boolean  "annotation_value"
-    t.string   "tweet_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
-  add_index "annotations", ["user_id", "created_at"], :name => "index_annotations_on_user_id_and_created_at"
+ActiveRecord::Schema.define(:version => 20130617145921) do
 
   create_table "tweets", :force => true do |t|
-    t.string   "annotation"
-    t.string   "annotator"
-    t.datetime "dateTime"
+    t.string   "content"
+    t.string   "tweetId"
+    t.integer  "replies"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

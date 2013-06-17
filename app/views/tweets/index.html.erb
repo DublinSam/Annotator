@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Annotation</th>
+    <th>Tweet</th>
     <th>Annotator</th>
     <th>Datetime</th>
     <th></th>
@@ -12,7 +12,7 @@
 
 <% @tweets.each do |tweet| %>
   <tr>
-    <td><%= tweet.annotation %></td>
+    <td><%= tweet.content %></td>
     <td><%= tweet.annotator %></td>
     <td><%= tweet.dateTime %></td>
     <td><%= link_to 'Show', tweet %></td>

@@ -3,17 +3,14 @@
   <aside class="span5">
     <section>
       <h1>
-        <%= gravatar_for @user %>
+      <%= gravatar_for @user %>
       <%= @user.name %> 
       </h1>
     </section>
   </aside>
   <div class="span8">
-    <% if @user.annotations.any? %>
-    <h3>Annotations (<%= @user.annotations.count %>)</h3>
-    <ol class="annotations">
-        <%= render @annotations %>
-    </ol>
-    <%= will_paginate @annotations %>
-    <% end %>
+    <p> Statistics about classification rate can go here.  E.g.
+      This fake graph:
+    </p>
+    <%= link_to image_tag("graph.png", alt: "graph") %>
 </div>

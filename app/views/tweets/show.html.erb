@@ -1,31 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Annotation:</b>
-  <%= @tweet.annotation %>
+  <b>Tweet:</b>
+  <%= @tweet.content %>
 </p>
 
+<!--
 <p>
   <b>Annotator:</b>
   <%= @tweet.annotator %>
 </p>
+-->
 
 <p>
   <b>Datetime:</b>
   <%= @tweet.dateTime %>
 </p>
 
+<p>
+  Need something sensible here in views/tweets/show.html.erb
+</p>
+
+<!-- 
 <h2>Annotations</h2>
-<% @tweet.annotations.each do |theannotation| %>
+<% @tweet.tweets.each do |thetweet| %>
     <p>
         <b>Annotator:</b>
-        <%= theannotation.annotator %>
+        <%= thetweet.annotator %>
     </p>
 
     <p>
-        <b>Annotation:</b>
-        <%= theannotation.annotationValue %>
+        <b>Content:</b>
+        <%= thetweet.content %>
     </p>
+  -->
 <% end %>
 
 
