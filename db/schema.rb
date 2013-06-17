@@ -11,18 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130615210929) do
+ActiveRecord::Schema.define(:version => 20130617095027) do
 
   create_table "annotations", :force => true do |t|
-    t.string   "browserUAString"
-    t.string   "annotator"
-    t.string   "annotationValue"
-    t.integer  "tweet_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
+    t.boolean  "annotation_value"
+    t.string   "tweet_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
-  add_index "annotations", ["tweet_id"], :name => "index_annotations_on_tweet_id"
+  add_index "annotations", ["user_id", "created_at"], :name => "index_annotations_on_user_id_and_created_at"
 
   create_table "tweets", :force => true do |t|
     t.string   "annotation"
@@ -35,12 +34,13 @@ ActiveRecord::Schema.define(:version => 20130615210929) do
   create_table "users", :force => true do |t|
     t.string   "email"
     t.integer  "number_of_annotations"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.string   "password_digest"
     t.string   "remember_token"
     t.string   "name"
     t.integer  "language_level"
+    t.boolean  "admin",                 :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

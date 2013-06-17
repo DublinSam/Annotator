@@ -1,7 +1,17 @@
 class AnnotationsController < ApplicationController
+    before_filter :signed_in_user
+
     def create
-        @tweet = Tweet.find(params[:tweet_id])
-        @annotation = @tweet.annotation.create(params[:annotationValue])
-        redirect_to tweet_path(@tweet)
+      @annotation = current_user.annotations.build(params[:annotation])
+      if @annotation.save
+        # flash[:success] = "Annotation created!"
+        redirect_to root_url
+      else
+        @feed_items = []
+        render 'static_pages/home'
+      end  
+    end
+
+    def destroy
     end
 end

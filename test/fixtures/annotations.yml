@@ -1,26 +1,11 @@
-# == Schema Information
-#
-# Table name: annotations
-#
-#  id              :integer          not null, primary key
-#  browserUAString :string(255)
-#  annotator       :string(255)
-#  annotationValue :string(255)
-#  tweet_id        :integer
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#
-
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  browserUAString: MyString
-  userId: MyString
-  annotationValue: MyString
-  tweet: 
+  user_id: 1
+  annotation_value: false
+  tweet_id: MyString
 
 two:
-  browserUAString: MyString
-  userId: MyString
-  annotationValue: MyString
-  tweet: 
+  user_id: 1
+  annotation_value: false
+  tweet_id: MyString

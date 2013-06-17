@@ -1,24 +1,23 @@
 TweetApp::Application.routes.draw do
-  get "users/new"
 
-  resources :tweets do
-    resources :annotations
-  end
+#  resources :tweets do
+#    resources :annotations
+#  end
 
   resources :users
-
   resources :sessions, only: [:new, :create, :destroy]
+  resources :annotations, only: [:create, :destroy]
 
 
-  match '/signup', to: 'users#new'
+  match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
-  root :to => 'home#index'
+  root :to => 'static_pages#home'
 
   
-  match '/help', to: 'static_pages#help'
-  match '/about', to: "static_pages#about"
+  match '/help',    to: 'static_pages#help'
+  match '/about',   to: "static_pages#about"
   match '/contact', to: "static_pages#contact"
 
 
