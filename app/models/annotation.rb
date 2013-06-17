@@ -1,9 +1,6 @@
 class Annotation < ActiveRecord::Base
-  attr_accessible :annotation_value
+  attr_accessible :email, :tweetId, :value
   belongs_to :user
+  belongs_to :tweet 
 
-#  validates :annotation_value, presence: true
-  validates :user_id, presence: true
-
-  default_scope order: 'annotations.created_at DESC'
 end

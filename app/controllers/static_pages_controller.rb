@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
     if signed_in?
       #@tweet = current_user.tweets.build
       @feed_items = current_user.feed.paginate(page: params[:page])
+      @annotation = current_user.annotations.build
     end
   end
 

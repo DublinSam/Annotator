@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130617145921) do
+ActiveRecord::Schema.define(:version => 20130617211548) do
+
+  create_table "annotations", :force => true do |t|
+    t.string   "tweetId"
+    t.string   "email"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
 
   create_table "tweets", :force => true do |t|
     t.string   "content"

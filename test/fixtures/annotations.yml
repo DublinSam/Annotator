@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user_id: 1
-  annotation_value: false
-  tweet_id: MyString
+  tweetId: MyString
+  email: MyString
+  value: MyString
 
 two:
-  user_id: 1
-  annotation_value: false
-  tweet_id: MyString
+  tweetId: MyString
+  email: MyString
+  value: MyString

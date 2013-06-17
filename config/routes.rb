@@ -6,7 +6,7 @@ TweetApp::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :annotations, only: [:create, :destroy]
+  resources :annotations, only: [:create]
 
 
   match '/signup',  to: 'users#new'

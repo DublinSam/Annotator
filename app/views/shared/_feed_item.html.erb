@@ -3,6 +3,9 @@
   </span>
   <span class="content"><%= feed_item.content %></span>
   <span class="timestamp">
-    Posted 
+    Replies:
+    <%= render partial: 'shared/replies' %> 
+    Classification: 
+    <%= render partial: 'shared/answer_buttons' %> 
   </span>
 </li>

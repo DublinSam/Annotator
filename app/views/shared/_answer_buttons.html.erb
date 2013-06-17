@@ -1,0 +1,15 @@
+<%= form_for(@annotation) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <p></p>
+    <div class="btn-group" data-toggle="buttons-radio">
+     <button type="button" class="btn btn-primary">Sarcastic</button>
+     <button type="button" class="btn btn-primary">Non-Sarcastic</button>
+     <div id="divider" class="divider" /></div>
+     <%= f.submit "Submit", class: "btn btn-success" %>
+      <div class="btn-group" data-toggle="buttons-radio">
+    </div>
+   </div>
+  </div>
+<% end %>
