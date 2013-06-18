@@ -1,7 +1,8 @@
-<li id="<%= feed_item.content %>">
+<li id="<%= @feed_item.content %>">
   <span class="user">
   </span>
-  <span class="content"><%= feed_item.content %></span>
+  <span class="content"><%= @feed_item.content %></span>
+  <span class="content"><% @annotation.tweetId = @feed_item.tweetId %></span>
   <span class="timestamp">
     Replies:
     <%= render partial: 'shared/replies' %> 

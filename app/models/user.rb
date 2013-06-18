@@ -28,9 +28,43 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   def feed
-    # Collect all tweets
-    Tweet.where("id > ?", 0)
+    # Collect the next tweet to be annotated, in order of preference
+     Tweet.find('random')
+    #  thesetweets = Tweet.where("id > ?", 0)
+    #  thesetweets[0]
+   # thistweet = Tweet.where("id > ?", 0)
+   # thistweetId = thistweet.tweetId
+    #if (Annotation.where("tweetId=?",tweetId) == null)
+    
   end
+
+  def counter
+    @userId = User.where(:email => self.email).pluck(:id)
+    Annotation.where(:user_id => @userId).count()
+  end
+
+  def rater
+    if counter < 10
+      ["A dour serf","serf.png"]
+    elsif counter < 20
+      ["A humourless yeoman", "yeoman.png"]
+    elsif counter < 30
+      ["A moderately amusing jester", "jester.png"]
+    elsif counter < 40
+      ["A cheerful merchant", "merchant.png"]
+    elsif counter < 50
+      ["A witty knight", "knight.png"]
+    elsif counter < 60
+      ["A banterous baron", "baron.png"]
+    elsif counter < 100
+      ["A prince of sarcasm", "prince.png"]
+    else
+      ["An emperor of irony", "emperor.png"]
+    end
+  end
+
+
+  
 
    private
 

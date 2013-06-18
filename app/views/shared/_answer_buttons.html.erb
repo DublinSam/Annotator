@@ -1,15 +1,19 @@
 <%= form_for(@annotation) do |f| %>
 
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <p></p>
-    <div class="btn-group" data-toggle="buttons-radio">
-     <button type="button" class="btn btn-primary">Sarcastic</button>
-     <button type="button" class="btn btn-primary">Non-Sarcastic</button>
-     <div id="divider" class="divider" /></div>
-     <%= f.submit "Submit", class: "btn btn-success" %>
-      <div class="btn-group" data-toggle="buttons-radio">
-    </div>
-   </div>
+    <div class="field">
+
+     <br>
+
+     <div class="btn-group" data-toggle="buttons-radio">
+       <button value="sarcastic" name="annotation[value]" type="submit" class="btn btn-primary"data-disable-with="Please wait...">  sarcastic
+       </button>
+
+       <button value="not sarcastic" name="annotation[value]" type="submit" class="btn btn-info" data-disable-with="submitting...">
+         not sarcastic
+       </button>
+
+      <div id="divider" class="divider" /></div>
+    <%= hidden_field(:annotation, :tweetId) %>
   </div>
 <% end %>

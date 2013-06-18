@@ -4,7 +4,8 @@ class AnnotationsController < ApplicationController
     def create
         @annotation = current_user.annotations.build(params[:annotation])
         if @annotation.save
-            flash[:success] = "Annotated!!"
+            #flash[:success] = "Annotated!!"
+            redirect_to root_url
         else
             render 'static_pages/home'
         end

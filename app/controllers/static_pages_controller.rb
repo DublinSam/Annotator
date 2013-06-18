@@ -3,8 +3,10 @@ class StaticPagesController < ApplicationController
   def home
     if signed_in?
       #@tweet = current_user.tweets.build
-      @feed_items = current_user.feed.paginate(page: params[:page])
+      @feed_item = current_user.feed
       @annotation = current_user.annotations.build
+      @count = current_user.counter
+      @rating = current_user.rater
     end
   end
 
