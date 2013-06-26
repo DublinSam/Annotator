@@ -45,21 +45,21 @@ class User < ActiveRecord::Base
 
   def rater
     if counter < 10
-      ["A dour serf","serf.png"]
+      ["A dour serf","adourserf.jpeg"]
     elsif counter < 20
-      ["A humourless yeoman", "yeoman.png"]
+      ["A humourless yeoman", "ahumourlessyeoman.png"]
     elsif counter < 30
-      ["A moderately amusing jester", "jester.png"]
+      ["A mildly amusing jester", "amildlyamusingjester.png"]
     elsif counter < 40
-      ["A cheerful merchant", "merchant.png"]
+      ["A cheerful merchant", "acheerfulmerchant.png"]
     elsif counter < 50
-      ["A witty knight", "knight.png"]
+      ["A witty knight", "awittyknight.png"]
     elsif counter < 60
-      ["A banterous baron", "baron.png"]
-    elsif counter < 100
-      ["A prince of sarcasm", "prince.png"]
+      ["A banterous baron", "abanterousbaron.png"]
+    elsif counter < 80
+      ["A sarcastic prince", "asarcasticprince.png"]
     else
-      ["An emperor of irony", "emperor.png"]
+      ["An ironic emperor", "anironicemperor.png"]
     end
   end
 

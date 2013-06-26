@@ -14,13 +14,17 @@
   </div>  
 <% else %>
   <div class="center hero-unit">
-    <h1>Welcome to the annotator</h1>
+    <h1>Twitter annotation study</h1>
 
     <h2>
-      This is the home page for the application.
+      A study into the challenges of detecting sarcasm on twitter.
     </h2>
 
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+    <p>
+      Would you like to participate in the study and help out? <br>Follow the link to find out more aboot what the study entails and how you can take part.
+    </p>
+
+    <%= link_to "Find out more", instructions_path, class: "btn btn-large btn-primary" %>
   </div>
 
 <%= link_to image_tag("me_speech.png", alt: "me") %>

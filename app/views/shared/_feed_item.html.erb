@@ -4,8 +4,18 @@
   <span class="content"><%= @feed_item.content %></span>
   <span class="content"><% @annotation.tweetId = @feed_item.tweetId %></span>
   <span class="timestamp">
-    Replies:
-    <%= render partial: 'shared/replies' %> 
+    Replies: 
+    <br>
+    <%= @feed_item.reply_1 %> 
+    <br>
+    <%= @feed_item.reply_2 %> 
+    <br>
+    <%= @feed_item.reply_3 %> 
+    <br>
+    <%= @feed_item.reply_4 %>
+    <br> 
+    <%= @feed_item.reply_5 %>
+    <br> 
     Classification: 
     <%= render partial: 'shared/answer_buttons' %> 
   </span>

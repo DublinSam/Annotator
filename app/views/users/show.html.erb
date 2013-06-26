@@ -6,11 +6,19 @@
       <%= gravatar_for @user %>
       <%= @user.name %> 
       </h1>
+        <p>Tweets Annotated:
+          <%= @count %>
+      </p>
+      <br>
+      <br>
+  <p>Your rating: <%= @rating[0] %></p>
+  <p>Your accuracy:</p>
     </section>
   </aside>
-  <div class="span8">
-    <p> Statistics about classification rate can go here.  E.g.
-      This fake graph:
-    </p>
-    <%= link_to image_tag("graph.png", alt: "graph") %>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <span>
 </div>
