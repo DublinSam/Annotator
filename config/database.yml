@@ -32,4 +32,4 @@ production:
   pool: 5
   username: Sam
   password: "pYqLN7qep9Hf"
-  socket: 3306
+  socket: "3306"
