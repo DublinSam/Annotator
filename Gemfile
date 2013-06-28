@@ -12,9 +12,14 @@ gem 'capistrano'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development, :test, :production do
-  gem "mysql2", "~> 0.3.11"
+group :development, :test do
+  gem "mysql2", "~> 0.2.3"
 end
+
+group :production do
+    gem "mysql2", "~> 0.2.3"    
+end
+
 
 group :development do
   gem 'annotate', '2.5.0'
