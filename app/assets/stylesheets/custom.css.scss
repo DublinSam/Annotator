@@ -1,6 +1,7 @@
 @import "bootstrap";
 
 
+
 /* universal */
 
 html {
@@ -268,4 +269,12 @@ input[type="radio"] {
 
 .sentimentred{
   color: #ff0000
+}
+
+.btn-success { 
+background-color: #FFF;
+}
+
+.btn-success:hover {
+background-color: #FFF; 
 }

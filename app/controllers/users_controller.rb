@@ -1,13 +1,17 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
-  before_filter :correct_user,   only: [:edit, :update]
+  before_filter :signed_in_user, only: [:edit, :update, :index, :destroy]
+  before_filter :correct_user,   only: [:edit, :update, :show]
   before_filter :admin_user,     only: :destroy
 
   def show
+    #if @user.username != params[:id]
+      #redirect_to user_path(@user)
+   # else
     @user = User.find(params[:id])
     @count = @user.counter
     @rating = @user.rater
     #@tweets = @user.tweets.paginate(page: params[:page])
+ # end
   end
 
   def new
@@ -18,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user 
-      flash[:success] = "Welcome to the Annotator"
+      flash[:success] = "Welcome to the Annotator: Please remember that all questions are optional - you may logout of the application at any time."
       redirect_to @user
     else
       render 'new'
@@ -49,6 +53,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def signed_in_user
+      redirect_to signin_url, notice: "Please sign in." unless signed_in?
+    end
 
     def correct_user
       @user = User.find(params[:id])
