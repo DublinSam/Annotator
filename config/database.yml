@@ -31,5 +31,5 @@ production:
   pool: 5
   username: Sam
   password: "apurestringpassword"
-  host: tweets.cjt9k5vjxlva.us-east-1.rds.amazonaws.com
+  host: "tweets.cjt9k5vjxlva.us-east-1.rds.amazonaws.com"
   port: 3306
