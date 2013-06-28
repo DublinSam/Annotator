@@ -1,7 +1,4 @@
-
 require 'bundler/capistrano'
-
-puts RUBY_VERSION
 
 set :rake, "#{rake} --trace"
 
@@ -52,7 +49,9 @@ after 'deploy:update_code', 'deploy:migrate'
 
  #If you are using Passenger mod_rails uncomment this:
  namespace :deploy do
-   task :start do ; end
+   task :start do
+     puts RUBY_VERSION
+   end
    task :stop do ; end
    task :restart, :roles => :app, :except => { :no_release => true } do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
