@@ -31,5 +31,5 @@ production:
   database: tweetDB
   pool: 5
   username: Sam
-  password: "pYqLN7qep9Hf"
-  socket: "3306"
+  password: 'pYqLN7qep9Hf'
+  socket: 3306
